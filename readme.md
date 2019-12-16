@@ -17,3 +17,30 @@ Response
 }
 }
 ```
+
+
+
+```schema
+{
+    greeting
+    students {
+        id
+        firstName
+        lastName
+    }
+}
+```
+
+
+
+```
+
+
+{
+    studentById ( id : "S1001" ) {
+        id
+        firstName
+        lastName
+    }
+}
+````

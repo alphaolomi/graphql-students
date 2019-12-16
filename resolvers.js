@@ -8,6 +8,9 @@ const Query = {
 
   studentById: (root, args, context, info) => {
     return db.students.get(args.id);
+  },
+  setFavouriteColor: (root, args) => {
+    return "Your Fav Color is :" + args.color;
   }
 };
 

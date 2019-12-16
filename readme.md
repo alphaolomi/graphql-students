@@ -64,3 +64,11 @@ rating
 }
 }
 ```
+
+
+query vars
+```
+{
+"color_variable" : "RED"
+}
+```

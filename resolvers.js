@@ -4,6 +4,9 @@ const Query = {
   greeting: () => {
     return "hello ql";
   },
+
+  sayHello: (root, args, context, info) => `Hi ${args.name} GraphQL server says Hello to you!!`,
+
   students: () => db.students.list(),
 
   studentById: (root, args, context, info) => {

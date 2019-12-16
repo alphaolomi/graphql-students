@@ -126,3 +126,11 @@ signUp ( input : $input )
 "password" : "pass@1234"
 }
 }
+
+
+JQuery Integration
+
+{
+greeting ,
+sayHello ( name : "Mohtashim" )
+}

@@ -1,5 +1,6 @@
 type Query {
   greeting: String
+  sayHello ( name : String !): String
   students: [Student]
   studentById(id: ID!): Student
   setFavouriteColor(color: ColorType): String

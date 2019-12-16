@@ -1,24 +1,22 @@
-
 http://localhost:9000/graphiql
 
-
 request
+
 ```json
 {
-Test
+  Test
 }
 ```
 
 Response
+
 ```json
 {
-"data": {
-"test": "Test Success, GraphQL server is running !!"
-}
+  "data": {
+    "test": "Test Success, GraphQL server is running !!"
+  }
 }
 ```
-
-
 
 ```schema
 {
@@ -31,8 +29,6 @@ Response
 }
 ```
 
-
-
 ```
 
 
@@ -43,4 +39,28 @@ Response
         lastName
     }
 }
-````
+```
+
+```
+{
+students{
+id
+fullName
+}
+}
+```
+
+```
+{
+students {
+id
+firstName
+college {
+id
+name
+location
+rating
+}
+}
+}
+```

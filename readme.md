@@ -72,3 +72,38 @@ query vars
 "color_variable" : "RED"
 }
 ```
+
+
+mutation
+```
+mutation {
+createStudent ( collegeId : "col-2" , firstName : "Tim" , lastName : "George" )
+}
+
+```
+
+
+```
+{
+studentById ( id : "SkQtxYBUm" ) {
+id
+firstName
+lastName
+}
+}
+```
+
+
+addStudent_returns_object
+```
+mutation {
+addStudent_returns_object ( collegeId : "col-101" , firstName : "Susan" , lastName : "George" ) {
+id
+firstName
+college {
+id
+name
+}
+}
+}
+```

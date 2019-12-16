@@ -25,6 +25,16 @@ const Mutation = {
       lastName: args.lastName
     });
     return db.students.get(id);
+  },
+
+  signUp: (root, args, context, info) => {
+    const { email, firstName, password } = args.input;
+    const emailExpression = '/^(([^<>()[]\\.,;:s@"]+(.[^<>()[]\\.,;:s@"]+)*)|(".+"))@((\'';
+    const isValidEmail = emailExpression.test(String(email).toLowerCase());
+    if (!isValidEmail) throw new Error("email not in proper format");
+    if (firstName.length > 15) throw new Error("firstName should be less than 15 characters");
+    if (password.length < 8) throw new Error("password should be minimum 8 characters");
+    return "success";
   }
 };
 

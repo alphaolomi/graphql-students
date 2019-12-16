@@ -107,3 +107,22 @@ name
 }
 }
 ```
+
+validation
+
+```
+
+mutation doSignUp ( $input : SignUpInput ) {
+signUp ( input : $input )
+}
+
+```
+
+
+{
+"input" :{
+"email" : "abc@abc" ,
+"firstName" : "kannan" ,
+"password" : "pass@1234"
+}
+}

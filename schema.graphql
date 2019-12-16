@@ -6,7 +6,7 @@ type Query {
 }
 
 type Mutation {
-    addStudent_returns_object ( collegeId : ID , firstName : String , lastName : String ): Student
+  addStudent_returns_object(collegeId: ID, firstName: String, lastName: String): Student
   createStudent(collegeId: ID, firstName: String, lastName: String): String
 }
 
@@ -30,4 +30,10 @@ enum ColorType {
   RED
   BLUE
   GREEN
+}
+
+input SignUpInput {
+  email: String!
+  password: String!
+  firstName: String!
 }

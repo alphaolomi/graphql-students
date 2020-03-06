@@ -1,6 +1,8 @@
-http://localhost:9000/graphiql
+# API SCHEMA
 
-request
+BASE URL: http://localhost:9000/graphiql
+
+## Request
 
 ```graphql
 {
@@ -8,7 +10,7 @@ request
 }
 ```
 
-Response
+## Response
 
 ```json
 {

@@ -2,7 +2,7 @@ http://localhost:9000/graphiql
 
 request
 
-```json
+```graphql
 {
   Test
 }

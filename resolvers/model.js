@@ -11,4 +11,4 @@ const Student = {
     },
 };
 
-module.exports = {Query, Student};
+// module.exports = Student;

@@ -3,6 +3,10 @@ const cors = require("cors");
 const express = require("express");
 const path = require("path");
 
+const { ApolloServer } = require("apollo-server-express");
+const typeDefs = require("./schema")
+const resolvers = require("./resolvers");
+
 const app = express();
 app.use(cors(), bodyParser.json());
 
@@ -11,11 +15,6 @@ app.use(express.static(path.join(__dirname, "client/build")));
 app.get("/app", (req, res) => {
   res.sendFile(path.join(__dirname + "/client/public/index.html"));
 });
-
-const fs = require("fs");
-const { ApolloServer, gql } = require("apollo-server-express");
-const typeDefs = fs.readFileSync("./schema/schema.graphql", { encoding: "utf-8" });
-const resolvers = require("./resolvers");
 
 const server = new ApolloServer({
   typeDefs,

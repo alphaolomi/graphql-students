@@ -1,71 +1,71 @@
-import React, {Component} from "react";
+import React, { Component } from "react";
 import gql from "graphql-tag";
 
 async function loadStudentsAsync() {
-    const query = gql`
-        {
-            students {
-                id
-                firstName
-                lastName
-                college {
-                    name
-                }
-            }
+  const query = gql`
+    {
+      students {
+        id
+        firstName
+        lastName
+        college {
+          name
         }
-    `;
-    const {data} = await client.query({query});
-    return data.students;
+      }
+    }
+  `;
+  const { data } = await client.query({ query });
+  return data.students;
 }
 
 class Functional extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            students: []
-        };
-        this.studentTemplate = [];
-    }
+  constructor(props) {
+    super(props);
+    this.state = {
+      students: [],
+    };
+    this.studentTemplate = [];
+  }
 
-    async loadStudents() {
-        const studentData = await loadStudentsAsync();
-        this.setState({
-            students: studentData
-        });
-        console.log("loadStudents");
-    }
+  async loadStudents() {
+    const studentData = await loadStudentsAsync();
+    this.setState({
+      students: studentData,
+    });
+    console.log("loadStudents");
+  }
 
-    render() {
-        return (
-            <div>
-                <input type="button" value="loadStudents" onClick={this.loadStudents.bind(this.loadStudents)}/>
-                <div>
-                    <br/>
-                    <hr/>
-                    <table border="3">
-                        <thead>
-                        <tr>
-                            <td> First Name</td>
-                            <td> Last Name</td>
-                            <td> college Name</td>
-                        </tr>
-                        </thead>
-                        <tbody>
-                        {this.state.students.map(s => {
-                            return (
-                                <tr key={s.id}>
-                                    <td>{s.firstName}</td>
-                                    <td>{s.lastName}</td>
-                                    <td>{s.college.name}</td>
-                                </tr>
-                            );
-                        })}
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-        );
-    }
+  render() {
+    return (
+      <div>
+        <input type="button" value="loadStudents" onClick={this.loadStudents.bind(this.loadStudents)} />
+        <div>
+          <br />
+          <hr />
+          <table border="3">
+            <thead>
+              <tr>
+                <td> First Name</td>
+                <td> Last Name</td>
+                <td> college Name</td>
+              </tr>
+            </thead>
+            <tbody>
+              {this.state.students.map((s) => {
+                return (
+                  <tr key={s.id}>
+                    <td>{s.firstName}</td>
+                    <td>{s.lastName}</td>
+                    <td>{s.college.name}</td>
+                  </tr>
+                );
+              })}
+            </tbody>
+          </table>
+        </div>
+      </div>
+    );
+  }
 }
 
 export default Functional;

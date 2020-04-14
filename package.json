@@ -8,6 +8,7 @@
     "server": "nodemon server.js",
     "client": "npm start --prefix client",
     "dev": "concurrently \"npm run server\" \"npm run client\"",
+    "test": "jest --passWithNoTests",
     "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix client        && npm run build --prefix client"
   },
   "dependencies": {
@@ -21,6 +22,8 @@
     "notarealdb": "^0.2.2"
   },
   "devDependencies": {
+    "apollo-server-testing": "^2.12.0",
+    "jest": "^25.3.0",
     "nodemon": "2.0.2"
   }
 }

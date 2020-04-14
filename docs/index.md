@@ -129,32 +129,4 @@ mutation doSignUp ( $input : SignUpInput ) {
     "password" : "pass@1234"
     }
 }
-
-## JQuery Integration
-
-```graphl
-{
-  greeting,
-  sayHello ( name : "Mohtashim" )
-}
-```
-
-## react
-```bash
-npx create-react-app hello-world-client
-npx create-react-app hello-world-client
-npm install apollo-boost graphql
-```
-
-```json
-{
-  "apollo-cache": "^1.1.15",
-  "apollo-cache-inmemory": "^1.2.8",
-  "apollo-client": "^2.4.0",
-  "apollo-link": "^1.0.6",
-  "apollo-link-error": "^1.0.3",
-  "apollo-link-http": "^1.3.1",
-  "apollo-link-state": "^0.4.0",
-  "graphql-tag": "^2.4.2"
-}
 ```

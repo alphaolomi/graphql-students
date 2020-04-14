@@ -52,3 +52,5 @@ const Mutation = {
         return "success";
     }
 };
+
+module.exports = Mutation;

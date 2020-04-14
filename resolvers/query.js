@@ -50,3 +50,6 @@ const Query = {
     return "Your Fav Color is :" + args.color;
   },
 };
+
+
+module.exports = Query;

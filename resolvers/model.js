@@ -11,4 +11,4 @@ const Student = {
     },
 };
 
-// module.exports = Student;
+module.exports = Student;

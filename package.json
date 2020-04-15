@@ -2,12 +2,13 @@
   "name": "graphql-students",
   "private": true,
   "scripts": {
-    "dev:start": "nodemon --ignore data/ server.js",
     "client-install": "npm install --prefix client",
-    "start": "node server.js",
-    "server": "nodemon server.js",
     "client": "npm start --prefix client",
+    "start": "node ./bin/www",
+    "debug": "DEBUG=graphql-students:* npm start",
+    "server": "nodemon --ignore data/server.js",    
     "dev": "concurrently \"npm run server\" \"npm run client\"",
+    "test": "jest --passWithNoTests",
     "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix client        && npm run build --prefix client"
   },
   "dependencies": {
@@ -18,9 +19,13 @@
     "express": "^4.17.1",
     "graphql": "^15.0.0",
     "graphql-tools": "^4.0.7",
-    "notarealdb": "^0.2.2"
+    "notarealdb": "^0.2.2",
+    "debug": "~2.6.9",      
+    "morgan": "~1.9.1"
   },
   "devDependencies": {
+    "apollo-server-testing": "^2.12.0",
+    "jest": "^25.3.0",
     "nodemon": "2.0.2"
   }
 }

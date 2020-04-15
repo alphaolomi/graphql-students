@@ -1,15 +1,17 @@
-type Query {
-  test: String
-  greeting: String
-  sayHello(name: String!): String
+type Query { 
+  ping: String
+
   students: [Student]
   studentById(id: ID!): Student
-  setFavouriteColor(color: ColorType): String
+
+  college: [College]
+  collegeById(id: ID!):College
+  
 }
 
 type Mutation {
-  addStudent_returns_object(collegeId: ID, firstName: String, lastName: String): Student
-  createStudent(collegeId: ID, firstName: String, lastName: String): String
+  addStudent(collegeId: ID, firstName: String, lastName: String): Student
+  
 }
 
 type Student {
@@ -26,16 +28,4 @@ type College {
   name: String
   location: String
   rating: Float
-}
-
-enum ColorType {
-  RED
-  BLUE
-  GREEN
-}
-
-input SignUpInput {
-  email: String!
-  password: String!
-  firstName: String!
 }

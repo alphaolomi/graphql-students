@@ -6,22 +6,13 @@ const db = require("../db");
  */
 const Query = {
   /**
-   * greeting
+   * ping
    * @returns {string}
    */
-  greeting: () => {
-    return "hello ql";
+  ping: () => {
+    return "pong";
   },
 
-  /**
-   * sayHello
-   * @param root
-   * @param args
-   * @param context
-   * @param info
-   * @returns {string}
-   */
-  sayHello: (root, args, context, info) => `Hi ${args.name} GraphQL server says Hello to you!!`,
 
   /**
    * students
@@ -40,15 +31,27 @@ const Query = {
   studentById: (root, args, context, info) => {
     return db.students.get(args.id);
   },
+
+
+
+   /**
+   * colleges
+   * @returns {Entity[]}
+   */
+  colleges: () => db.colleges.list(),
+
   /**
-   * setFavouriteColor
+   * collegeById
    * @param root
    * @param args
-   * @returns {string}
+   * @param context
+   * @param info
+   * @returns {Entity}
    */
-  setFavouriteColor: (root, args) => {
-    return "Your Fav Color is :" + args.color;
+  collegeById: (root, args, context, info) => {
+    return db.colleges.get(args.id);
   },
+ 
 };
 
 

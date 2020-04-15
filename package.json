@@ -6,7 +6,7 @@
     "client": "npm start --prefix client",
     "start": "node ./bin/www",
     "debug": "DEBUG=graphql-students:* npm start",
-    "server": "nodemon --ignore data/server.js",    
+    "server": "nodemon --ignore data/server.js",
     "dev": "concurrently \"npm run server\" \"npm run client\"",
     "test": "jest --passWithNoTests",
     "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix client        && npm run build --prefix client"
@@ -16,12 +16,17 @@
     "body-parser": "^1.19.0",
     "concurrently": "^5.1.0",
     "cors": "^2.8.5",
+    "debug": "~2.6.9",
+    "dotenv": "^8.2.0",
     "express": "^4.17.1",
     "graphql": "^15.0.0",
     "graphql-tools": "^4.0.7",
+    "morgan": "~1.9.1",
     "notarealdb": "^0.2.2",
-    "debug": "~2.6.9",      
-    "morgan": "~1.9.1"
+    "pg": "^8.0.2",
+    "pg-hstore": "^2.3.3",
+    "sequelize": "^5.21.6",
+    "sequelize-cli": "^5.5.1"
   },
   "devDependencies": {
     "apollo-server-testing": "^2.12.0",
